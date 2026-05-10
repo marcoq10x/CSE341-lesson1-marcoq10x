@@ -59,7 +59,7 @@ content-type: application/json
 }
 
 ### PUT contact (Updates James Rodriguez)
-PUT https://cse341-lesson1-marcoq10x.onrender.com/contacts/69f6dccc3c5a74b69794e93c HTTP/1.1
+PUT https://cse341-lesson1-marcoq10x.onrender.com/contacts/6a0033f4afc2691fe3dc5ede HTTP/1.1
 content-type: application/json
 
 {
@@ -71,4 +71,4 @@ content-type: application/json
 }
 
 ### DELETE contact (Deletes Falcao)
-DELETE https://cse341-lesson1-marcoq10x.onrender.com/contacts/69f6dd9e3c5a74b69794e93e HTTP/1.1
+DELETE https://cse341-lesson1-marcoq10x.onrender.com/contacts/6a0033f4afc2691fe3dc5ede HTTP/1.1
