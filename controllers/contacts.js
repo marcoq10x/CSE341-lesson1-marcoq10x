@@ -18,4 +18,50 @@ const getSingle = async (req, res) => {
   });
 };
 
-module.exports = { getAll, getSingle };
+const createContact = async (req, res) => {
+  const contact = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    favoriteColor: req.body.favoriteColor,
+    birthday: req.body.birthday
+  };
+  const result = await mongodb.getDb().db().collection('contacts').insertOne(contact);
+  if (result.acknowledged) {
+    res.status(201).json(result);
+  } else {
+    res.status(500).json(result.error || 'Some error occurred while creating the contact.');
+  }
+};
+
+const updateContact = async (req, res) => {
+  const userId = new ObjectId(req.params.id);
+  // replaceOne will replace the entire document with these new fields
+  const contact = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    favoriteColor: req.body.favoriteColor,
+    birthday: req.body.birthday
+  };
+  const result = await mongodb.getDb().db().collection('contacts').replaceOne({ _id: userId }, contact);
+  if (result.modifiedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(result.error || 'Some error occurred while updating the contact.');
+  }
+};
+
+const deleteContact = async (req, res) => {
+  const userId = new ObjectId(req.params.id);
+  const result = await mongodb.getDb().db().collection('contacts').deleteOne({ _id: userId });
+  
+  if (result.deletedCount > 0) {
+    res.status(200).send();
+  } else {
+    // ARMOR UPGRADE: Clean 404 Not Found instead of a 500 crash
+    res.status(404).json('Contact not found or already deleted.');
+  }
+};
+
+module.exports = { getAll, getSingle, createContact, updateContact, deleteContact };
