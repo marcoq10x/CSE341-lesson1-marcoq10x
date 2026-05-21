@@ -20,8 +20,8 @@ content-type: application/json
     "birthday":"09/02/1961"
 }
 
-### PUT contact (Updates James Rodriguez's color to Red and modifies email)
-PUT http://localhost:8080/contacts/6a0026c5e3bda593c9240078 HTTP/1.1
+### PUT contact (Updates James Rodriguez)
+PUT http://localhost:8080/contacts/6a003cd7ef37eb7e4e078d5a HTTP/1.1
 content-type: application/json
 
 {
@@ -33,7 +33,7 @@ content-type: application/json
 }
 
 ### DELETE contact (Deletes Falcao)
-DELETE http://localhost:8080/contacts/6a0026c5e3bda593c9240078 HTTP/1.1
+DELETE http://localhost:8080/contacts/6a003cd7ef37eb7e4e078d5a HTTP/1.1
 
 
 // ==========================
@@ -59,7 +59,7 @@ content-type: application/json
 }
 
 ### PUT contact (Updates James Rodriguez)
-PUT https://cse341-lesson1-marcoq10x.onrender.com/contacts/6a0033f4afc2691fe3dc5ede HTTP/1.1
+PUT https://cse341-lesson1-marcoq10x.onrender.com/contacts/6a003d612bd0300e4b8d0d4d HTTP/1.1
 content-type: application/json
 
 {
@@ -71,4 +71,4 @@ content-type: application/json
 }
 
 ### DELETE contact (Deletes Falcao)
-DELETE https://cse341-lesson1-marcoq10x.onrender.com/contacts/6a0033f4afc2691fe3dc5ede HTTP/1.1
+DELETE https://cse341-lesson1-marcoq10x.onrender.com/contacts/6a003d612bd0300e4b8d0d4dHTTP/1.1
